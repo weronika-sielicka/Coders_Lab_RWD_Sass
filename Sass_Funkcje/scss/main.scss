@@ -1,0 +1,35 @@
+$colorRed: lighten(red, 40%);
+$color: blue;
+
+@for $i from 1 through 4{
+  h#{$i}{
+color: $color;
+  }
+  $color: lighten($color, 15%);
+}
+
+
+//Zadanie 1
+$myNumber: 7;
+
+p{
+  font-size: percentage($myNumber);
+}
+
+//Zadanie 2
+$color-one: red;
+$color-two: blue;
+
+$color-mix: mix($color-one, $color-two);
+
+p{
+  color: $color-mix;
+}
+
+//Zadanie 3
+
+@function sum($a, $b){
+  @return $a + $b;
+}
+
+@debug sum(4,7);

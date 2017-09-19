@@ -1,0 +1,20 @@
+#toggle-menu{
+  display: none;
+}
+
+
+@media (max-width: 500px){
+  .mobile-section{
+    ul{
+      display: none;
+
+      &.opened{
+        display: block;
+      }
+    }
+  }
+
+  #toggle-menu{
+    display: block;
+  }
+}

@@ -1,0 +1,47 @@
+$colors: red, blue, green;
+$widths: (body: 800px, header: 500px, main-width: 400px);
+/*
+body{
+width: map-get($widths, body);
+background-color: nth($colors, 1);
+}
+
+header{
+  width: map-get($widths, header);
+  background-color: nth($colors, 2);
+
+}
+
+section{
+  &.main-width{
+    width: map-get($widths, main-width);
+    background-color: nth($colors, 3);
+
+  }
+} */
+
+//Zadanie 1
+$five-colors: (one: pink, two: blue, three: yellow, four:green, five: aquamarine);
+
+body{
+  background-color: map-get($five-colors, one);
+}
+p{
+  background-color: map-get($five-colors, two);
+
+}
+span{
+  background-color: map-get($five-colors, three);
+
+}
+footer{
+  background-color: map-get($five-colors, five);
+}
+
+//Zadanie 2
+
+$width-map: (min-width: 200px, max-width: 900px);
+$new-list: map-values($width-map);
+body{
+  width: nth($new-list, 2);
+}

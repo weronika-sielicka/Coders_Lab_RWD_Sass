@@ -1,0 +1,62 @@
+$main-color: navy;
+$width-one: 1000px;
+
+header {
+  border: 1px solid $main-color;
+}
+
+.main-width {
+  width: $width-one;
+
+  .menu {
+    background-color: $main-color;
+
+    li {
+      display: inline-block;
+      padding-left: 10px;
+
+      &:first-child {
+        color: red;
+      }
+    }
+  }
+}
+
+.my-links {
+  li {
+    display: inline-block;
+    padding-left: 10px;
+
+    &:first-child {
+      a {
+        color: orange;
+      }
+    }
+
+    &:last-child {
+      a {
+        color: green;
+      }
+    }
+
+    a {
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
+
+footer {
+    li {
+      display: inline-block;
+      text-align: left;
+
+      &:hover {
+        color: blue;
+      }
+      &:last-child{
+        float: right;
+      }
+    }
+}

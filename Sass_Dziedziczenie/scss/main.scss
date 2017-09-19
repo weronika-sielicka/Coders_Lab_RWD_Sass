@@ -1,0 +1,51 @@
+%clearfix{
+  &:before, &:after{
+    clear: both;
+    display: block;
+    content: "";
+  }
+}
+
+%box{
+  height: 100px;
+  width: 400px;
+  border: 1px solid grey;
+  font-size: 16px;
+  text-align: left;
+  margin-top: 10px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+
+
+.test-mixin{
+  width: 600px;
+  @extend %clearfix;
+
+  >div{
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    float: left;
+
+    &.right_box{
+      float: right;
+    }
+  }
+}
+
+.container{
+  .success{
+    @extend %box;
+    background-color: rgba(255, 255, 139, 0.9);
+  }
+  .error{
+    @extend %box;
+    background-color: rgba(255, 159, 139, 0.9);
+  }
+  .info{
+    @extend %box;
+    background-color:  rgba(162, 186, 246, 0.9);
+  }
+}

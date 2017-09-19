@@ -1,0 +1,60 @@
+@mixin small {
+   @media(max-width: 399px){
+    background-color: green;
+  }
+}
+@mixin middle {
+   @media(min-width:400px) and (max-width: 799px){
+    background-color: violet;
+  }
+}
+@mixin large {
+   @media(min-width: 800px){
+    background-color: orange;
+  }
+} //To było zadanie 2
+
+body {
+  @include small;
+  @include middle;
+  @include large;
+}
+@mixin placeholder {
+  &::placeholder {
+    @content;
+  }
+}
+
+.my-form {
+  input,
+  textarea {
+    @include placeholder {
+      color: red;
+    }
+  }
+}
+
+//Zadanie 3
+@mixin DIVZ{
+  @media(min-width: 640px){
+  display: inline-block;
+  width: 300px;
+  }
+}
+
+.myDiv-one{
+  width: 100%;
+  height: 300px;
+  margin-left: 10px;
+  background-color: black;
+@include DIVZ;
+}
+
+.myDiv-two{
+  width: 100%;
+  height: 300px;
+  margin-left: 10px;
+  background-color: aquamarine;
+  @include DIVZ;
+
+}

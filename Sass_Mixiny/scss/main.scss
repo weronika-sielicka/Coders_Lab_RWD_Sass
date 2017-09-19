@@ -1,0 +1,64 @@
+@mixin clearfix(){
+  &:before, &:after{
+    display: block;
+    clear: both;
+    content: '';
+  }
+}
+
+.test-mixin{
+  width: 500px;
+  @include clearfix();
+
+  > div{
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    float: left;
+
+&.right_box{
+  float: right;
+}
+  }
+}
+
+
+//Zadanie 1
+
+@mixin frame($color){
+  border-top:1px solid $color;
+  border-bottom:0;
+  border-left:2px dashed darken($color, 20%);
+  border-right:1px solid lighten($color, 20%);
+  border-radius:5px;
+}
+
+header{
+  @include frame(red);
+}
+
+//Zadanie 2
+@mixin arrow($direction){
+$color: red;
+width: 0;
+height: 0;
+border-style: solid;
+@if($direction == 'top'){
+  border-width: 0 50px 100px 50px;
+  border-color: transparent transparent $color transparent;
+} @if($direction == 'bottom'){
+  border-width: 100px 50px 0 50px;
+  border-color: $color transparent transparent transparent;
+}@if($direction == 'right'){
+  border-width: 50px 0 50px 100px;
+  border-color: transparent transparent transparent $color;
+}
+@if($direction == 'left'){
+  border-width: 50px 100px 50px 0;
+  border-color: transparent $color transparent transparent;
+}
+}
+
+.test-arrow{
+  @include arrow('left');
+}

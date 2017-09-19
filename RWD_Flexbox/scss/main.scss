@@ -1,0 +1,136 @@
+article {
+  display: flex;
+
+  section {
+    width: 100px;
+    height: 400px;
+    background-color: lightgrey;
+    margin: 0 15px;
+
+    &.big {
+      flex-grow: 2;
+    }
+  }
+}
+//Zadanie 1
+.list {
+  display: flex;
+  justify-content: center;
+
+  li {
+    flex-direction: row;
+    justify-content: center;
+    margin: 5px;
+    list-style: none;
+  }
+}
+//Zadanie 2
+.circles {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  div {
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+    align-content: center;
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    line-height: 100px;
+  }
+}
+//Zadanie 3
+.crazy-layout {
+  //Mobile 420px
+  @media (max-width: 420px) {
+    flex-flow: row-reverse wrap;
+      }
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin-top: 20px;
+
+  div {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-right: 5px solid white;
+    border-left: 5px solid white;
+    font-size: 20px;
+    line-height: 50px;
+  }
+
+  #one {
+    width: 100%;
+    background-color: aquamarine;
+  }
+
+  #two {
+    width: 50%;
+    background-color: aquamarine;
+  }
+
+  #three {
+    width: 50%;
+    background-color: aquamarine;
+  }
+
+  #four {
+    width: 25%;
+    background-color: aquamarine;
+  }
+
+  #five {
+    width: 25%;
+    background-color: aquamarine;
+  }
+
+  #six {
+    width: 25%;
+    background-color: aquamarine;
+  }
+
+  #seven {
+    width: 25%;
+    background-color: aquamarine;
+  }
+
+  #eight {
+    width: 70%;
+    background-color: aquamarine;
+  }
+
+  #nine {
+    width: 30%;
+    background-color: aquamarine;
+  }
+
+  #ten {
+    width: 100%;
+    background-color: aquamarine;
+  }
+}
+//Mobile 420px
+@media (max-width: 420px) {
+       #one, #two, #three, #eight, #nine, #ten {
+      width: 100%;
+      }
+
+    #four, #five, #six, #seven {
+      width: 50%;
+      }
+
+  #nine {
+    order: 1;
+  }
+}

@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+$columns: 12;
+$base-width: 100%/$columns;
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  .row {
+    position: relative;
+    margin-left: -15px;
+    margin-right: -15px;
+
+    &:after,
+    &:before {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    [class*="col-"] {
+      float: left;
+      min-height: 1px;
+      word-wrap: break-word;
+      width: 100%;
+      padding: 15px;
+    }
+
+    //Do 768px (col-xs)
+    @media(max-width: 768px) {
+       @for $i from 1 through $columns{
+        .col-xs-#{$i} {
+          width: $base-width * $i;
+        }
+      }
+    }
+
+    //Od 768px (col-sm)
+    @media(min-width: 768px) {
+       @for $i from 1 through $columns{
+        .col-sm-#{$i} {
+          width: $base-width * $i;
+        }
+      }
+    }
+
+    //Od 992px (col-md)
+    @media(min-width: 992px) {
+       @for $i from 1 through $columns{
+        .col-md-#{$i} {
+          width: $base-width * $i;
+        }
+      }
+    }
+
+    //Od 1200px (col-lg)
+    @media(min-width: 1200px) {
+       @for $i from 1 through $columns{
+        .col-lg-#{$i} {
+          width: $base-width * $i;
+        }
+      }
+    }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+  #header {
+    background-color: violet;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+
+  .menu {
+    background-color: blue;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  #yellow {
+    background-color: yellow;
+    height: 300px;
+    margin-bottom: 10px;
+  }
+
+  #blue {
+    background-color: blue;
+    height: 300px;
+    margin-bottom: 10px;
+  }
+
+  #footer {
+    background-color: navy;
+    height: 100px;
+  }
+}

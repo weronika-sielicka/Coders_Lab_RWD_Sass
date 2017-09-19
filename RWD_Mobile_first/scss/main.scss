@@ -1,0 +1,33 @@
+
+    .container{
+      .sidebar, section{
+        height: 300px;
+        color: #fff;
+        text-align: center;
+      }
+
+      .sidebar{
+        background: #0b4b93;
+      }
+
+      section{
+        background: #000;
+      }
+    }
+
+
+    @media (min-width: 640px){
+      .container{
+        .sidebar, section{
+          float: left;
+        }
+
+        .sidebar{
+          width: 20%;
+        }
+
+        section{
+          width: 80%;
+        }
+      }
+    }
